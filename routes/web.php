@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,12 +21,8 @@ Route::get('/hello', function () {
 });
 
 // Mise en place des URL de la boutique en créant des routes
-use App\Http\Controllers\HomeController;
-Route::get('/', [HomeController::class, 'index']);
 
-use App\Http\Controllers\ProductController;
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/product', [ProductController::class, 'index']);
 Route::get('/product/{id}', [ProductController::class, 'id']);
-
-use App\Http\Controllers\CartController;
 Route::get('/cart', [CartController::class, 'index']);

@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     //
-    function index()
+    public function index()
     {
-        return 'Panier';
+        return view('cart');
     }
 }
