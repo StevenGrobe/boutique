@@ -19,19 +19,12 @@ Route::get('/hello', function () {
 });
 
 // Mise en place des URL de la boutique en créant des routes
-Route::get('/', function () {
-    return 'Home page';
-});
+use App\Http\Controllers\HomeController;
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/product', function () {
-    return 'Liste des produits';
-});
+use App\Http\Controllers\ProductController;
+Route::get('/product', [ProductController::class, 'index']);
+Route::get('/product/{id}', [ProductController::class, 'id']);
 
-Route::get('/product/{id}', function ($id) {
-    return 'Fiche produit' . ' ' . $id;
-});
-
-Route::get('/cart', function () {
-    return 'Panier';
-});
-
+use App\Http\Controllers\CartController;
+Route::get('/cart', [CartController::class, 'index']);
