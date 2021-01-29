@@ -13,6 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Page d'accueil 
+Route::get('/hello', function () {
     return view('welcome');
 });
+
+// Mise en place des URL de la boutique en créant des routes
+Route::get('/', function () {
+    return 'Home page';
+});
+
+Route::get('/product', function () {
+    return 'Liste des produits';
+});
+
+Route::get('/product/{id}', function ($id) {
+    return 'Fiche produit' . ' ' . $id;
+});
+
+Route::get('/cart', function () {
+    return 'Panier';
+});
+
