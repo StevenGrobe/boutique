@@ -10,14 +10,7 @@ class HomeController extends Controller
     //
     public function index()
     {
-        $users = DB::select('select * from products');
-
-        foreach ($users as $user) {
-            echo $user->name . '<br />';
-            echo $user->price . '<br />';
-            echo $user->picture . '<br />';
-            echo '<br />';
-        }
-        return view('homepage');
+        $products = DB::select('select * from products');
+        return view('homepage', ['products' => $products]);
     }
 }
