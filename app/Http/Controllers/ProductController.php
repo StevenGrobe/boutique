@@ -23,9 +23,9 @@ class ProductController extends Controller
         return view('product-list', ['products' => $products]);
     }
 
-    public function one()
+    public function id($id)
     {
-        $products = Product::select('name', 'price')->take(1)->get();
-        return view('product-list', ['products' => $products]);
+        $products = Product::all()->find($id);
+        return view('product-details', ['products' => $products]);
     }
 }

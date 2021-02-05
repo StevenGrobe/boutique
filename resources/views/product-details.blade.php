@@ -9,11 +9,14 @@
     <div class="list-product">
         <div class="item">
             <div class="item-container">
-                
-                <h2><img src={{ $products->picture }} width="400px" alt=""></h2>
-               <h2> {{ $products->name }} </h2>
-               <h2> {{ $products->price }} €</h2>
 
+                @if (isset($products))  
+                    <h2> {{ $products->name }} </h2>
+                    <h2> {{ $products->price }} €</h2>
+               @else 
+                    <h2> le produit n'existe pas</h2>
+               @endif
+               
             </div>
         </div>   
     </div>    
