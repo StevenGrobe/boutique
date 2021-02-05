@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackofficeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -27,3 +28,5 @@ Route::get('/product', [ProductController::class, 'index']);
 Route::get('/product2', [ProductController::class, 'price']);
 Route::get('/product/{id}', [ProductController::class, 'id']);
 Route::get('/cart', [CartController::class, 'index']);
+// back office
+Route::get('/backoffice', [BackofficeController::class, 'index']);
