@@ -3,16 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        // $products = DB::select('SELECT * FROM products');
-        // return view('product-list', ['products' => $products]);
-
         $products = Product::orderBy('name')->get();
         return view('product-list', ['products' => $products]);
     }
@@ -25,7 +21,7 @@ class ProductController extends Controller
 
     public function id($id)
     {
-        $products = Product::all()->find($id);
+        $products = Product::find($id);
         return view('product-details', ['products' => $products]);
     }
 }
