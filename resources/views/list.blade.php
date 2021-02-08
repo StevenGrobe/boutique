@@ -11,8 +11,13 @@
         </div>
     </div>
   </nav>
+
 {{-- content --}}
+@foreach ($products as $product)
 <br>
-<h2> <a href="/backoffice/product/add">Add Product</a></h2>
+<h2> {{ $product->name }} </h2> 
+<h2> {{ $product->price }} €</h2>
+<a href="/backoffice/product/modify/{{ $product->id }}"><button class="btn btn-primary">Modifier</button></a>
+<a href="/backoffice/product/delete/{{ $product->id }}"><button class="btn btn-primary">Supprimer</button></a>
 <br>
-<h2> <a href="/backoffice/product">Modify Product</a></h2>
+@endforeach

@@ -11,8 +11,9 @@
         </div>
     </div>
   </nav>
+
 {{-- content --}}
 <br>
-<h2> <a href="/backoffice/product/add">Add Product</a></h2>
+<h2>Le produit a été supprimé</h2>
 <br>
-<h2> <a href="/backoffice/product">Modify Product</a></h2>
+<a href="/backoffice/product"><button class="btn btn-primary">Retour</button></a>

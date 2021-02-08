@@ -30,3 +30,13 @@ Route::get('/product/{id}', [ProductController::class, 'id']);
 Route::get('/cart', [CartController::class, 'index']);
 // back office
 Route::get('/backoffice', [BackofficeController::class, 'index']);
+// add product
+Route::get('/backoffice/product/add', [BackofficeController::class, 'form']);
+Route::post('/backoffice/product/add/result', [BackofficeController::class, 'result']);
+// list product
+Route::get('/backoffice/product', [BackofficeController::class, 'list']);
+// delete
+Route::get('/backoffice/product/delete/{id}', [BackofficeController::class, 'delete']);
+// modify
+Route::get('/backoffice/product/modify/{id}', [BackofficeController::class, 'modify']);
+Route::post('/backoffice/product/modify/{id}/result', [BackofficeController::class, 'modifyresult']);

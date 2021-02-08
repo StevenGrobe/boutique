@@ -13,6 +13,6 @@
   </nav>
 {{-- content --}}
 <br>
-<h2> <a href="/backoffice/product/add">Add Product</a></h2>
+<h1>Le produit est modifié : {{ $produit->name }}.</h1>
 <br>
-<h2> <a href="/backoffice/product">Modify Product</a></h2>
+<a href="/backoffice/product"><button class="btn btn-primary">Retour</button></a>
